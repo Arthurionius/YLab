@@ -3,7 +3,7 @@
 error_reporting(-1);
 
 function sortMultiArray(&$arr) {
-    foreach ($arr as $key => &$value) {
+    foreach ($arr as &$value) {
       foreach ($value as &$item) {
         usort($item, function ($a, $b) {
             return ($a['PRICE'] - $b['PRICE']);
@@ -60,7 +60,6 @@ $arr = [
     ];
 
 sortMultiArray($arr);
-
 
 print_r($arr);
 ?>
